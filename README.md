@@ -16,14 +16,18 @@ Due to unespected delays in other commitments, I was unable to consume the [Insu
 5. implement the Inbound to read from http requests
 6. implement the Outbound adapters to write to h2 database
 7. create the integration tests
+8. create a docker image for the api
+9. run the container
+10. test the api
 
 ### Deploy in AWS
-1. create a docker image for the api
-2. push the image do [docker hub](https://hub.docker.com)
-3. create an ECS Task in ASW
+1. push the image do [docker hub](https://hub.docker.com)
+3. create an [ECS](https://aws.amazon.com/ecs/) Task in ASW
 4. pull the image from docker hub
+5. start the container
+6. test the api
 
 ### Documentation
-1. create a c4 model to explain the architecture
-2. create a linked in article to explain the whole solution
+1. create a [c4 model}(https://c4model.com/) to explain the architecture
+2. create a linkedin article to explain the whole solution
 3. create a Youtube playlist to explain my decisions on executing the technical test
