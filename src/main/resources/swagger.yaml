@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Swagger Users - OpenAPI 3.0
+  description: Api to make the InsuranceManager avaiable to the user
+  version: 1.0.0
+externalDocs:
+  description: github
+  url: http://github.io
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: customer
+    description: Operations about customer
+paths:
+  /customer:
+    post:
+      tags:
+        - customer
+      summary: Create customer
+      description: Create a customer.
+      operationId: createCustomer
+      requestBody:
+        description: Created customer object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerRequest'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateCustomerResponse'
+  /customer/{id}:
+    get:
+      tags:
+        - customer
+      summary: Get customer by id
+      description: ''
+      operationId: getCustomerById
+      parameters:
+        - name: id
+          in: path
+          description: 'id of customer '
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrieveCustomerResponse'
+        '404':
+          description: customer not found
+components:
+  schemas:
+    CreateCustomerRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: Roberto Messa
+          minLength: 3
+          maxLength: 20
+    CreateCustomerResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: Roberto Messa
+    RetrieveCustomerResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: Roberto Messa
+
+
+
+
+
