@@ -20,6 +20,10 @@ Due to unespected delays in other commitments, I was unable to consume the [Insu
 9. run the container
 10. test the api
 
+### Security
+1. Implement JWT with SpringSecurity
+2. Test the api
+
 ### Deploy in AWS
 1. push the image do [docker hub](https://hub.docker.com)
 3. create an [ECS](https://aws.amazon.com/ecs/) Task in ASW
